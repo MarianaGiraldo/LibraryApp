@@ -31,11 +31,11 @@ class CreateColumnBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->dropColumn('BookTitle');
-            $table->dropColumn('Autor');
-            $table->dropColumn('Genre');
-            $table->dropColumn('PublicationYear');
-            $table->dropColumn('Status');
+            $table->dropColumn('title');
+            $table->dropColumn('autor');
+            $table->dropColumn('genre');
+            $table->dropColumn('publication_year');
+            $table->dropColumn('status');
         });
     }
 }

@@ -15,11 +15,7 @@ class CreateColumnUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->id();
-            $table->text('nombre');
-            $table->text('apellido');
-            $table->text('correo');
-            $table->text('contraseña');
-            $table->text('estado');
+            $table->string('list_books_held');
         });
     }
 
