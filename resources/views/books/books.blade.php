@@ -38,9 +38,18 @@
             <div class="content">
                 <div class="row">
                     <div class="col">
-                        <h2>Lista de libros</h2>
+                        <h2>Book list</h2>
                         <table class="table">
                             @foreach($books as $books)
+                            <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Autor</td>
+                                <td>Genre</td>
+                                <td>Edition</td>
+                                <td>Publication year</td>
+                                <td>Status</td>
+                            </tr>
                             <tr>
                                 <td>{{$books->id}}</td>
                                 <td>{{$books->name}}</td>
