@@ -14,7 +14,12 @@ class CreateColumnBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table-> String('BookTitle',100);
+            $table-> String('Autor',50);
+            $table-> set('Genre', ['Action', 'Romance', 'Science Fiction', 'Literary fiction', 'Mistery', 'Thriller',
+                                 'Horror', 'Historical', 'Fantasy', 'Dystopian', 'Magical Realism', 'Realist Literature'] );
+            $table-> date('PublicationYear',4);
+            $table-> set('Status',['Borrowed','Available'] );
         });
     }
 
@@ -26,7 +31,11 @@ class CreateColumnBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table-> String('Name');
+            $table->dropColumn('BookTitle');
+            $table->dropColumn('Autor');
+            $table->dropColumn('Genre');
+            $table->dropColumn('PublicationYear');
+            $table->dropColumn('Status');
         });
     }
 }
