@@ -43,12 +43,12 @@
                             @foreach($books as $books)
                             <tr>
                                 <td>{{$books->id}}</td>
-                                <td>{{$books->nombre_libro}}</td>
-                                <td>{{$books->autor_libro}}</td>
-                                <td>{{$books->categoria_libro}}</td>
-                                <td>{{$books->edicion_libro}}</td>
-                                <td>{{$books->año_publicacion}}</td>
-                                <td>{{$books->estado_libro}}</td>
+                                <td>{{$books->name}}</td>
+                                <td>{{$books->autor}}</td>
+                                <td>{{$books->genre}}</td>
+                                <td>{{$books->edition}}</td>
+                                <td>{{$books->publication_year}}</td>
+                                <td>{{$books->status}}</td>
                             </tr>
                             @endforeach                       
                         </table>
