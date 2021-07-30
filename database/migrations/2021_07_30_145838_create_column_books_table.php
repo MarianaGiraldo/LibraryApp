@@ -26,7 +26,7 @@ class CreateColumnBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table-> String('Name');
         });
     }
 }
