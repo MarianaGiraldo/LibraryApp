@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('books.books', ['books'=>Book::all()]);
+        return view('books.index', ['books'=>Book::all(), 'fondo'=>'#add8e6']);
     }
 
     /**
