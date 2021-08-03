@@ -24,7 +24,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('book.create', ['book'=>$book, 'id'=>$id, 'fondo'=>'#ccb8e6']);
     }
 
     /**
@@ -35,7 +35,14 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevo = new book();
+        $nuevo ->title = $request->get('title');
+        $nuevo ->autor = $request->get('autor');
+        $nuevo ->genre = $request->get('genre');
+        $nuevo ->publication_year = $request->get('p_year');
+        $nuevo ->status = $request->get('status');
+        $nuevo -> save();
+        return redirect('/books');
     }
 
     /**
