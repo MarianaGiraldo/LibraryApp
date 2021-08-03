@@ -7,8 +7,9 @@
                 <div class="row">
                 @foreach($books as $book)
                     <div class="card col-4 showBooks m-4" >
+                    <img src="data:image/gif;base64,{{$book->book_cover}}" alt="{{$book->title}} cover image" >
                     <?php
-                    echo '<img src="data:image/jpg;base64,'.base64_encode($book->book_cover).'"/>';
+                    echo '<img src="data:image/jpg;base64,'.base64_encode($book->book_cover).'" alt="{{$book->title}} cover image"/>';
                     ?>
                     <div class="card-body">
                             <h5 class="card-title">Book title: {{$book->title}} </h5>
