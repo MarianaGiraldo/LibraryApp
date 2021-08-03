@@ -24,7 +24,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('book.create', ['book'=>book::all(), 'id'=>$id, 'fondo'=>'#ccb8e6']);
+        return view('books.create', ['book'=>book::all(), 'fondo'=>'#ccb8e6']);
     }
 
     /**
@@ -38,9 +38,10 @@ class BookController extends Controller
         $nuevo = new book();
         $nuevo ->title = $request->get('title');
         $nuevo ->autor = $request->get('autor');
-        $nuevo ->genre = $request->get('genre');
+        $nuevo ->genre = $request->genre;
         $nuevo ->publication_year = $request->get('p_year');
-        $nuevo ->status = $request->get('status');
+        $nuevo ->status = $request->status;
+        $nuevo ->book_cover = $request->book_cover;
         $nuevo -> save();
         return redirect('/books');
     }
