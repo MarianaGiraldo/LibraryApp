@@ -15,7 +15,7 @@ use App\Http\Controllers\BookController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', ['fondo'=>'#ccb8e6']);
 });
 
 Route::resource('/books',BookController::Class );
