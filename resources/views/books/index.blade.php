@@ -15,17 +15,16 @@
                         <th>Status</th>
                     </tr>
                 @foreach($books as $books)
-                            
-                            <tr>
-                                <td>{{$books->id}}</td>
-                                <td>{{$books->name}}</td>
-                                <td>{{$books->autor}}</td>
-                                <td>{{$books->genre}}</td>
-                                <td>{{$books->edition}}</td>
-                                <td>{{$books->publication_year}}</td>
-                                <td>{{$books->status}}</td>
-                            </tr>
-                            @endforeach 
+                    <tr>
+                        <td>{{$books->id}}</td>
+                        <td>{{$books->name}}</td>
+                        <td>{{$books->autor}}</td>
+                        <td>{{$books->genre}}</td>
+                        <td>{{$books->edition}}</td>
+                        <td>{{$books->publication_year}}</td>
+                        <td>{{$books->status}}</td>
+                    </tr>
+                @endforeach 
                 </table>
             </div>
         </div>
