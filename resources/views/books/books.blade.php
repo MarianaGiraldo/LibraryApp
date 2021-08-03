@@ -52,7 +52,7 @@
                             </tr>
                             <tr>
                                 <td>{{$books->id}}</td>
-                                <td>{{$books->name}}</td>
+                                <td>{{$books->title}}</td>
                                 <td>{{$books->autor}}</td>
                                 <td>{{$books->genre}}</td>
                                 <td>{{$books->edition}}</td>
