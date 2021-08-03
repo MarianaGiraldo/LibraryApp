@@ -12,7 +12,7 @@
                         <label for="lastName">Last Name</label>
                         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Type your last name">
                         <label for="birthDate">Date of birth</label>
-                        <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Select your date of birth">
+                        <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Select your date of">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Type your Email"> 
                         <label for="password">Password</label>
