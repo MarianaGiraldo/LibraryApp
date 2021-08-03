@@ -86,5 +86,6 @@
         </div>
     </div>
     <a href="/books" class="btn btn-primary m-3" role="button">Back</a>
+</div>
 
 @endsection

@@ -24,7 +24,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create', ['book'=>book::all(), 'fondo'=>'#ccb8e6']);
+        return view('books.create', ['books'=>Book::all(), 'fondo'=>'#ccb8e6']);
     }
 
     /**

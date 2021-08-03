@@ -14,7 +14,8 @@ class CreateColumnUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('list_books_held');
+            $table->string('list_books_held')->nullable();
+            $table->date('birthDate');
         });
     }
 

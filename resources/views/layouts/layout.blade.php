@@ -20,8 +20,8 @@
     .booksFormCreate{
       background-color: #add8e6;
     }
-    .formularioEdit{
-      background-color:#A7DBE3 
+    .usersFormCreate{
+      background-color:#e6b8d2; 
     }
     .formularioEditG{
       background-color:#97d992 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 use App\Models\Book;
 
 /*
@@ -20,5 +21,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/books',BookController::Class );
-
+Route::resource('/users',UserController::Class );
 
