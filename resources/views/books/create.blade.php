@@ -22,5 +22,4 @@
                     </div>
                     <button type="submit" class="btn btn-warning">Submit</button>
                 </form>                
-                <a href="books/create" class="btn btn-primary">Create user</a>
 @endsection
