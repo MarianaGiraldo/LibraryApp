@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
             <div class="col">
-                <h2>Users</h2>
+                <h2>Add books</h2>
                 <form action="/books" method="POST">
                 @csrf
                     <div class="form-group">
