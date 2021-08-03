@@ -16,9 +16,9 @@ class CreateColumnBooksTable extends Migration
         Schema::table('books', function (Blueprint $table) {
             $table-> String('title',100);
             $table-> String('autor',50);
-            $table-> set('genre', ['Action', 'Romance', 'Science Fiction', 'Literary fiction', 'Mistery', 'Thriller',
+            $table-> set('genre', ['Action', 'Romance', 'Politics', 'Science Fiction', 'Literary fiction', 'Mistery', 'Thriller',
                                  'Horror', 'Historical', 'Fantasy', 'Dystopian', 'Magical Realism', 'Realist Literature'] );
-            $table-> year('publication_year',4);
+            $table-> string('publication_year',4);
             $table-> set('status',['Borrowed','Available'] );
         });
     }
