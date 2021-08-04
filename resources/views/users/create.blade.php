@@ -49,7 +49,7 @@
                     <div class="formgroup row mb-3">
                         <label for="password" class="col-sm-4 col-form-label">Password: </label>
                         <div class="col-sm-8">
-                            <input type="hidden" class="form-control" id="password" name="password" placeholder="Type your Password">                       
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Type your Password">                       
                         </div>
                     </div>
                     <div class="row w-50 mx-auto"> <button type="submit" class="btn btn-success btn-lg col-12 mx-auto text-center">Create</button></div>

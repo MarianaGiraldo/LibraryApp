@@ -23,6 +23,7 @@
                         </div>
                     </div>
                 @endforeach
+                <a href="/books/create" class="btn btn-primary d-grid gap-2 col-6 mx-auto" role="button">Create a new Book</a>
                 </div>
             </div>
         </div>

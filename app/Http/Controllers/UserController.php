@@ -35,14 +35,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $nuevo = new user();
-        $nuevo ->title = $request->get('title');
-        $nuevo ->autor = $request->get('autor');
-        $nuevo ->genre = $request->genre;
-        $nuevo ->publication_year = $request->get('p_year');
-        $nuevo ->status = $request->status;
-        $nuevo ->book_cover = $request->book_cover;
-        $nuevo -> save();
+        $newUser = new user();
+        $newUser ->firstName = $request->get('firstName');
+        $newUser ->lastName = $request->get('lastName');
+        $newUser ->email = $request->get('email');
+        $newUser ->birthDate = $request->get('birthDate');
+        $newUser ->password = $request->get('password');
+        
+        $newUser -> save();
         return redirect('/users');
     }
 
