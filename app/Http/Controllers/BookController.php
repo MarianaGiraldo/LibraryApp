@@ -70,7 +70,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        return view('books.create', ['book'=>$book, 'fondo'=>'#ccb8e6']);
+        return view('books.edit', ['book'=>$book, 'fondo'=>'#ccb8e6']);
     }
 
     /**
@@ -80,9 +80,21 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, $id)
     {
-        //
+        $bookUpdt = Book::find($id);
+        $bookUpdt ->title = $request->get('titleEdit');
+        $bookUpdt ->autor = $request->get('autorEdit');
+        $bookUpdt ->genre = $request->genreEdit;
+        $bookUpdt ->publication_year = $request->get('p_yearEdit');
+        $bookUpdt ->status = $request->statusEdit;
+        // $photo = Input::file('book_cover');
+        // dd($photo);
+        // $filename = time() . '.' . $photo->getClientOriginalExtension();
+        // Image::make($photo)->resize(350,350)->save(public_path('images/' . $filename));
+        // $bookUpdt ->book_cover = $filename;
+        $bookUpdt -> save();
+        return redirect('/books');
     }
 
     /**
@@ -91,8 +103,18 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        $destroyBook = Book::find($id);
+        $destroyBook->delete();
+        return redirect('/books');
     }
+
+    public function drop($id)
+    {
+        $dropBook = Book::find($id);
+        return view('books.drop', ['dropBook'=>$dropBook, 'fondo'=>'#ccb8e6']);
+
+    }
+
 }
