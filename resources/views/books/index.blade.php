@@ -46,6 +46,7 @@
                             <p class="card-text">Autor: {{$book->autor}} </p>
                             <p class="card-text">Status: {{$book->status}} </p>
                             <a href="books/{{$book->id}}" class="btn btn-primary">View more</a>
+                            <a class="btn btn-success btn-sm d-inline" role="button" href="/books/{{$book->id}}/edit" >Edit</a>
                             <p class="card-text text-end">{{$book->id}} </p>
                         </div>
                     </div>

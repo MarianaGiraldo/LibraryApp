@@ -75,7 +75,7 @@
     <div class="container w-100 mx-5 my-3 p-2">
         @yield('index_content')
     </div>
-    
+    <br>
     <div class="container w-75 mx-auto my-3 fondo rounded p-1">
         @yield('content')
     </div>

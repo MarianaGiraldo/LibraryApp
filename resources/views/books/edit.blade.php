@@ -3,7 +3,7 @@
 @section('content')
 <div class="row m-4 ">
         <div class="col">
-            <h1>Create a new book</h1>
+            <h1>Edit book{{$id}}</h1>
         </div>
     </div>
     <div class="row">

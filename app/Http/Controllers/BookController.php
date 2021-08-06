@@ -41,7 +41,11 @@ class BookController extends Controller
         $nuevo ->genre = $request->genre;
         $nuevo ->publication_year = $request->get('p_year');
         $nuevo ->status = $request->status;
-        $nuevo ->book_cover = $request->book_cover;
+        $photo = $request->file('book_cover')->getClientOriginalExtension();
+        dd($photo);
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        Image::make($photo)->resize(350,350)->save(public_path('images/' . $filename));
+        $nuevo ->book_cover = $filename;
         $nuevo -> save();
         return redirect('/books');
     }
@@ -52,9 +56,9 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        //
+        return view('books.show', ['id'=>$id ,'book'=>Book::findOrFail($id), 'books'=>Book::all(), 'fondo'=>'#91a5f5']);
     }
 
     /**
@@ -63,9 +67,10 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('books.create', ['book'=>$book, 'fondo'=>'#ccb8e6']);
     }
 
     /**

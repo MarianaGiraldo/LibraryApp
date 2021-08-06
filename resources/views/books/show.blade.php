@@ -39,6 +39,12 @@
             </div>
             
           </div>
+          <h5>Book status: {{$book->status}} </h5>
+          @if ($book->status === 'Available')
+            <a href="" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
+          @else
+            <a href="" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
+          @endif
           <a href="" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
           <a href="" class="btn btn-primary m-3 col btn-lg" role="button">Email me the Book info</a>
         </div>  
@@ -63,7 +69,7 @@
             <td >{{$book->autor}} </td>
             <td >{{$book->genre}} </td>
             <td >{{$book->publication_year}} </td>
-            <td ><a class="btn btn-success btn-sm" role="button" href="" >Edit</a> </td>
+            <td ><a class="btn btn-success btn-sm" role="button" href="/books/{{$books->id}}/edit" >Edit</a> </td>
             <td ><a class="btn btn-danger btn-sm" role="button" href="" >Delete</a> </td>
         </tr>
     @endforeach
