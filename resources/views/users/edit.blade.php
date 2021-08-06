@@ -3,7 +3,7 @@
 @section('content')
 <div class="row m-4 ">
         <div class="col">
-            <h1>Edit User {{$id}}</h1>
+            <h1>Edit User {{$user->firstName}}</h1>
         </div>
     </div>
     <div class="row">
@@ -52,7 +52,7 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Type your Password">                       
                         </div>
                     </div>
-                    <div class="row w-50 mx-auto"> <button type="submit" class="btn btn-success btn-lg col-12 mx-auto text-center">Create</button></div>
+                    <div class="row w-50 mx-auto"> <button type="submit" class="btn btn-success btn-lg col-12 mx-auto text-center">Save</button></div>
                 </form>
             </div>
         </div>
