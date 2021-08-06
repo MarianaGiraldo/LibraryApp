@@ -12,6 +12,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Birth Date</th>
                             <th scope="col">Books held</th>
+                            <th scope="col">Action</th>
                 </tr>
                     @foreach($users as $user)
                         <tr class="table-light">
@@ -20,7 +21,8 @@
                             <td >{{$user->lastName}} </td>
                             <td >{{$user->email}} </td>
                             <td >{{$user->birthDate}} </td>
-                            <td >{{$user->list_books_held}} </td>                        
+                            <td >{{$user->list_books_held}} </td> 
+                            <td><a href="users/{{$user->id}}" class="btn btn-primary">View User</a></td>                       
                         </tr>
                     @endforeach
                     </table>
