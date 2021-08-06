@@ -17,6 +17,7 @@ class CreateLendingsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('book_id');
+            $table->set('type',['Borrow','Return'] );
             $table->timestamps();
         });
     }

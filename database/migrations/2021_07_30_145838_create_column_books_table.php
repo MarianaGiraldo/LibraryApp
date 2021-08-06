@@ -19,8 +19,8 @@ class CreateColumnBooksTable extends Migration
             $table-> set('genre', ['Action', 'Romance', 'Politics', 'Science Fiction', 'Literary fiction', 'Mistery', 'Thriller',
                                  'Horror', 'Historical', 'Fantasy', 'Dystopian', 'Magical Realism', 'Realist Literature', 'Other'] );
             $table-> string('publication_year',4);
-            $table-> set('status',['Borrowed','Available'] );
-            $table-> binary('book_cover');
+            $table-> set('status',['Borrowed','Available'] )->default('Available');
+            $table-> binary('book_cover')->nullable();
         });
     }
 
