@@ -22,7 +22,7 @@
                             <td >{{$user->email}} </td>
                             <td >{{$user->birthDate}} </td>
                             <td >{{$user->list_books_held}} </td> 
-                            <td><a href="users/{{$user->id}}" class="btn btn-primary">View User</a></td>                       
+                            <td><a href="users/{{$user->id}}/show" class="btn btn-primary">View User</a></td>                       
                         </tr>
                     @endforeach
                     </table>
