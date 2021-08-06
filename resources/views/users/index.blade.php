@@ -11,7 +11,6 @@
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Birth Date</th>
-                            <th scope="col">Books held</th>
                             <th scope="col">Action</th>
                 </tr>
                     @foreach($users as $user)
