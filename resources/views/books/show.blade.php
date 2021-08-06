@@ -45,7 +45,7 @@
           @else
             <a href="" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
           @endif
-          <a href="" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
+         
           <a href="" class="btn btn-primary m-3 col btn-lg" role="button">Email me the Book info</a>
         </div>  
     </div>
@@ -69,8 +69,8 @@
             <td >{{$book->autor}} </td>
             <td >{{$book->genre}} </td>
             <td >{{$book->publication_year}} </td>
-            <td ><a class="btn btn-success btn-sm" role="button" href="/books/{{$books->id}}/edit" >Edit</a> </td>
-            <td ><a class="btn btn-danger btn-sm" role="button" href="" >Delete</a> </td>
+            <td ><a class="btn btn-success btn-sm" role="button" href="/books/{{$book->id}}/edit" >Edit</a> </td>
+            <td ><a class="btn btn-danger btn-sm" role="button" href="/books/{{$book->id}}/drop" >Delete</a> </td>
         </tr>
     @endforeach
     </table>

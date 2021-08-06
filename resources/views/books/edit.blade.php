@@ -3,7 +3,7 @@
 @section('content')
 <div class="row m-4 ">
         <div class="col">
-            <h1>Edit book{{$id}}</h1>
+            <h1>Edit book: {{$book->title}}</h1>
         </div>
     </div>
     <div class="row">
@@ -18,24 +18,25 @@
           </ul>
         </div>         
         @endif
-            <form action="/books" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" >
+            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" >
                 @csrf
+                @method('put')
                 <div class="formgroup row mb-3">
-                    <label for="title" class="col-sm-4 col-form-label">Book Title: </label>
+                    <label for="titleEdit" class="col-sm-4 col-form-label">Book Title: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title">
+                      <input type="text" class="form-control" id="titleEdit" name="titleEdit" placeholder="Enter the book title">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
-                    <label for="autor" class="col-sm-4 col-form-label">Autor: </label>
+                    <label for="autorEdit" class="col-sm-4 col-form-label">Autor: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="autor" name="autor" placeholder="Enter the book autor">
+                      <input type="text" class="form-control" id="autorEdit" name="autorEdit" placeholder="Enter the book autor">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
-                    <label for="genre" class="col-sm-4 col-form-label">Genre: </label>
+                    <label for="genreEdit" class="col-sm-4 col-form-label">Genre: </label>
                     <div class="col-sm-8">
-                      <select class="form-select" aria-label="genre" name="genre">
+                      <select class="form-select" aria-label="genreEdit" name="genreEdit">
                         <option value="Action">Action</option>
                         <option value="Romance">Romance</option>
                         <option value="Politics">Politics</option>
@@ -54,15 +55,15 @@
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
-                    <label for="p_year" class="col-sm-4 col-form-label">Publication Year: </label>
+                    <label for="p_yearEdit" class="col-sm-4 col-form-label">Publication Year: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="p_year" name="p_year" placeholder="YYYY">
+                      <input type="text" class="form-control" id="p_yearEdit" name="p_yearEdit" placeholder="YYYY">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
-                    <label for="status" class="col-sm-4 col-form-label">Book status: </label>
+                    <label for="statusEdit" class="col-sm-4 col-form-label">Book status: </label>
                     <div class="col-sm-8">
-                      <select class="form-select" aria-label="status" name="status">
+                      <select class="form-select" aria-label="statusEdit" name="statusEdit">
                         <option value="Available">Available</option>
                         <option value="Borrowed">Borrowed</option>
                       </select>
