@@ -59,15 +59,7 @@
                       <input type="text" class="form-control" id="p_year" name="p_year" placeholder="YYYY">
                     </div>
                 </div>
-                <div class="formgroup row mb-3">
-                    <label for="status" class="col-sm-4 col-form-label">Book status: </label>
-                    <div class="col-sm-8">
-                      <select class="form-select" aria-label="status" name="status">
-                        <option value="Available">Available</option>
-                        <option value="Borrowed">Borrowed</option>
-                      </select>
-                    </div>
-                </div>
+                
                 <div class="formgroup row mb-3">
                     <label for="book_cover" class="col-sm-4 col-form-label">Book Cover: </label>
                     <div class="col-sm-8">

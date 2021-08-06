@@ -24,13 +24,13 @@
                 <div class="formgroup row mb-3">
                     <label for="titleEdit" class="col-sm-4 col-form-label">Book Title: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="titleEdit" name="titleEdit" placeholder="Enter the book title">
+                      <input type="text" class="form-control" id="titleEdit" name="titleEdit" value="{{$book->title}}">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
                     <label for="autorEdit" class="col-sm-4 col-form-label">Autor: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="autorEdit" name="autorEdit" placeholder="Enter the book autor">
+                      <input type="text" class="form-control" id="autorEdit" name="autorEdit" value="{{$book->autor}}>
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
@@ -58,15 +58,6 @@
                     <label for="p_yearEdit" class="col-sm-4 col-form-label">Publication Year: </label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="p_yearEdit" name="p_yearEdit" placeholder="YYYY">
-                    </div>
-                </div>
-                <div class="formgroup row mb-3">
-                    <label for="statusEdit" class="col-sm-4 col-form-label">Book status: </label>
-                    <div class="col-sm-8">
-                      <select class="form-select" aria-label="statusEdit" name="statusEdit">
-                        <option value="Available">Available</option>
-                        <option value="Borrowed">Borrowed</option>
-                      </select>
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
