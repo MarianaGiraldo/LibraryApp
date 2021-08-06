@@ -37,7 +37,7 @@
                 <div class="row">
                 @foreach($books as $book)
                     <div class="card col-4 showBooks m-4" >
-                    <img src="{{$book->book_cover}" alt="{{$book->title}} cover image" >
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book->book_cover); ?>" alt="{{$book->title}} cover image" />
                     <?php
                     displayImage($book->id); 
                     ?>
@@ -55,7 +55,7 @@
                 @endforeach
                 </div>
                 <a href="/books/create" class="btn btn-primary d-grid gap-2 col-6 mx-auto" role="button">Create a new Book</a>
-                
+                <br>
             </div>
         </div>
 @endsection

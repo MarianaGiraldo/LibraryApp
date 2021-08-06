@@ -36,10 +36,18 @@
     .show{
       background-color:#f5e191
     }
+    .titulo{
+        text-align: center;
+        margin: auto;
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        font-size: 60px;
+    }
     </style>
   </head>
   <body class="">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -64,7 +72,9 @@
         </div>
       </div>
     </nav>
-    
+    <div class="container w-100 mx-5 my-3 p-2">
+        @yield('index_content')
+    </div>
     
     <div class="container w-75 mx-auto my-3 fondo rounded p-1">
         @yield('content')

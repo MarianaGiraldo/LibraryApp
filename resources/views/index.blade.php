@@ -1,6 +1,33 @@
 @extends('layouts.layout')
 
+<br><br><br>
+<div style="background-image: url({{url('/images/library.jpg')}});">
+     <br><br><br><br><h1 class="text-primary titulo pl-4 mx-auto" style="width: 400px; background-color: #e3f2fd">The Golden Book Library</h1><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+      <br>
+@section('index_content')
+<div class="row mx-2">
+  <div class="col-6 mr-4">
+    <h2 class="mx-3 border-bottom-gray">Library</h2>
+    <hr>
+    <p class="">We are an open collaborative public library, designed to share the reading passion where everyone can get access.</p>
+    <p>Our page is based on users and books, so if you are new in our page, feel free to register and see the available books we have for you.</p>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-4 ml-4 text-end justify-content-end">
+    <h2 class="mx-3 border-bottom-gray">Books</h2>
+    <hr class="">
+    <p class="">We have plenty of books for you. Also you can contribute to the page by adding and borrowing a new book, so anyone who is interested could read it too</p>
+    <p>If you are new in our page, feel free to register and see the available books we have for you.</p>
+  </div>
+</div>
+
+<br>
+<h2 class="mx-3 border-bottom-gray">Galery</h2>
+<hr>
+@endsection
 @section('content')
+
 <div id="carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
