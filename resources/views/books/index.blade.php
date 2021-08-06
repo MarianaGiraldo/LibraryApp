@@ -1,15 +1,45 @@
 @extends('layouts.layout')
 
 @section('content')
+<?php 
+    function displayImage($id){
+        $host     = 'localhost';
+        $username = 'root';
+        $password = '';
+        $db     = 'libraryappdb';
+        
+        //Create the connection and select the database
+        $db = new mysqli($host, $username, $password, $db);
+        
+        // Check the connection
+        if($db->connect_error){
+            die("Connexion error: " . $db->connect_error);
+        }
+        
+        //Get the image from the database
+        $res = $db->query("SELECT book_cover FROM books WHERE id = {$id}");
+        
+        if($res->num_rows > 0){
+            $img = $res->fetch_assoc();
+            
+            //Render the image
+            header("Content-type: image/jpg"); 
+            echo $img['book_cover']; 
+        }else{
+            echo 'Image not found...';
+        }
+    
+    }
+?> 
         <div class="row ">
             <div class="col">
                 <h2 class="m-3">Books</h2>
                 <div class="row">
                 @foreach($books as $book)
                     <div class="card col-4 showBooks m-4" >
-                    <img src="data:image/gif;base64,{{$book->book_cover}}" alt="{{$book->title}} cover image" >
+                    <img src="{{$book->book_cover}" alt="{{$book->title}} cover image" >
                     <?php
-                    echo '<img src="data:image/jpg;base64,'.base64_encode($book->book_cover).'" alt="{{$book->title}} cover image"/>';
+                    displayImage($book->id); 
                     ?>
                     <div class="card-body">
                             <h5 class="card-title">Book title: {{$book->title}} </h5>
@@ -23,8 +53,9 @@
                         </div>
                     </div>
                 @endforeach
-                <a href="/books/create" class="btn btn-primary d-grid gap-2 col-6 mx-auto" role="button">Create a new Book</a>
                 </div>
+                <a href="/books/create" class="btn btn-primary d-grid gap-2 col-6 mx-auto" role="button">Create a new Book</a>
+                
             </div>
         </div>
 @endsection
