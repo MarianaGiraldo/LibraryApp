@@ -65,7 +65,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $modelEdit = user::find($id);
+        return view ('users.edit', ['userEdit'=>$userEdit]);
     }
 
     /**
@@ -77,7 +78,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userUpdt=User::find($id);
+        $userUpdt ->firstName = $request->get('firstName');
+        $userUpdt ->lastName = $request->get('lastName');
+        $userUpdt ->email = $request->get('email');
+        $userUpdt ->birthDate = $request->get('birthDate');
+        $userUpdt ->password = $request->get('password');
+        $userUpdt -> save();
+
+        return redirect('/users');
     }
 
     /**
@@ -88,6 +97,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyUser=user::find($id);
+        $destroyUser->destroy();
+        return redirect('/users');
+    }
+    public function drop($id)
+    {
+        $dropUser=user::find($id);
+        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'#ccb8e6']);
     }
 }
