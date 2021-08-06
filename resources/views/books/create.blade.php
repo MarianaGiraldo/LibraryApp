@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+<br><br>
 @section('content')
 <div class="row m-4 ">
         <div class="col">

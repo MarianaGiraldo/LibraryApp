@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+<br><br>
 @section('content')
 <?php 
     function displayImage($id){
@@ -44,11 +44,8 @@
                     <div class="card-body">
                             <h5 class="card-title">Book title: {{$book->title}} </h5>
                             <p class="card-text">Autor: {{$book->autor}} </p>
-                            <p class="card-text">Genre: {{$book->genre}} </p>
-                            <p class="card-text">Edition: {{$book->edition}} </p>
-                            <p class="card-text">Publication Year: {{$book->publication_year}} </p>
                             <p class="card-text">Status: {{$book->status}} </p>
-                            <a href="#" class="btn btn-primary">View more</a>
+                            <a href="books/{{$book->id}}" class="btn btn-primary">View more</a>
                             <p class="card-text text-end">{{$book->id}} </p>
                         </div>
                     </div>
