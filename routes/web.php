@@ -15,11 +15,8 @@ use App\Models\Book;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index', ['fondo'=>'#ccb8e6']);
-});
-
 Route::resource('/books',BookController::Class );
 Route::resource('/users',UserController::Class );
 
+
+Route::get('/books/{id}/drop', [\App\Http\Controllers\BookController::Class , 'drop' ]);
