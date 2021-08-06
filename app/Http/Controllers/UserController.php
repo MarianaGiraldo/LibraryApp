@@ -65,8 +65,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $modelEdit = user::find($id);
-        return view ('users.edit', ['userEdit'=>$userEdit]);
+        $user = user::findOrFail($id);
+        return view ('users.edit', ['user'=>$user, 'fondo'=>'#ccb8e6']);
     }
 
     /**
