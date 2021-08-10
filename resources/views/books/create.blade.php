@@ -18,7 +18,7 @@
           </ul>
         </div>         
         @endif
-            <form action="/books" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" >
+            <form action="/books" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" enctype="multipart/form-data">
                 @csrf
                 <div class="formgroup row mb-3">
                     <label for="title" class="col-sm-4 col-form-label">Book Title: </label>
