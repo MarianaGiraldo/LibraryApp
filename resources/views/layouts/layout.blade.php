@@ -8,14 +8,16 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" >
+    <link rel="icon" type="image/png" href="/../public/images/favicon.png">
+
 
     <title>The Golden Book</title>
     <style>
     .fondo{
-        background-color: {{$fondo}}
+        background-color: #add8e6;
       }
       .showBooks{
-        background-color:#ccb8e6
+        background-color:#ccb8e6;
     }
     .booksFormCreate{
       background-color: #add8e6;
