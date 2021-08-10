@@ -54,7 +54,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('users.show', ['user'=>User::findOrFail($id), 'users'=>User::all(), 'fondo'=>'#91a5f5']);
     }
 
     /**
