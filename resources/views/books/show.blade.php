@@ -9,7 +9,7 @@
     <div class="row">
         <div class="w-75 mx-auto rounded">
           <div class="card m-auto">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book->book_cover); ?>" alt="{{$book->title}} cover image" />
+            <img src="images/books/{{$book->book_cover}}" alt="{{$book->title}} cover image" />
           </div>
           <div class="row my-3">
           <h4>Book: {{$book->title}} </h4>

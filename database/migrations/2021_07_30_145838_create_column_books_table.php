@@ -20,7 +20,7 @@ class CreateColumnBooksTable extends Migration
                                  'Horror', 'Historical', 'Fantasy', 'Dystopian', 'Magical Realism', 'Realist Literature', 'Other'] );
             $table-> string('publication_year',4);
             $table-> set('status',['Borrowed','Available'] )->default('Available');
-            $table-> binary('book_cover')->nullable();
+            $table-> string('book_cover')->nullable();
         });
     }
 
@@ -37,6 +37,7 @@ class CreateColumnBooksTable extends Migration
             $table->dropColumn('genre');
             $table->dropColumn('publication_year');
             $table->dropColumn('status');
+            $table->dropColumn('book_cover');
         });
     }
 }

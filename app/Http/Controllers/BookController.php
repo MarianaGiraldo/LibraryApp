@@ -40,11 +40,11 @@ class BookController extends Controller
         $nuevo ->autor = $request->get('autor');
         $nuevo ->genre = $request->genre;
         $nuevo ->publication_year = $request->get('p_year');
-        $nuevo ->status = $request->status;
-        $photo = $request->file('book_cover')->getClientOriginalExtension();
-        dd($photo);
+        $photo = $request->file('book_cover');
         $filename = time() . '.' . $photo->getClientOriginalExtension();
-        Image::make($photo)->resize(350,350)->save(public_path('images/' . $filename));
+        $destino=public_path('images/books/');
+        $request->book_cover->move($destino, $filename);
+        //dd($photo. " Se movió el archivo");
         $nuevo ->book_cover = $filename;
         $nuevo -> save();
         return redirect('/books');
@@ -87,12 +87,11 @@ class BookController extends Controller
         $bookUpdt ->autor = $request->get('autorEdit');
         $bookUpdt ->genre = $request->genreEdit;
         $bookUpdt ->publication_year = $request->get('p_yearEdit');
-        $bookUpdt ->status = $request->statusEdit;
-        // $photo = Input::file('book_cover');
-        // dd($photo);
-        // $filename = time() . '.' . $photo->getClientOriginalExtension();
-        // Image::make($photo)->resize(350,350)->save(public_path('images/' . $filename));
-        // $bookUpdt ->book_cover = $filename;
+        $photo = $request->file('book_cover');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        $destino=public_path('images/books/');
+        $request->book_cover->move($destino, $filename);
+        $bookUpdt ->book_cover = $filename;
         $bookUpdt -> save();
         return redirect('/books');
     }
