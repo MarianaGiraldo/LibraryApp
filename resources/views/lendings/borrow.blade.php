@@ -1,9 +1,9 @@
-@extends('layouts.estructura')
+@extends('layouts.layout')
 
 @section('content')
     <div class="row m-4 ">
         <div class="col">
-            <h1>Enviar información a: </h1>
+            <h1>Borrow book: {{$book->title}} </h1>
         </div>
     </div>
     <div class="row">
@@ -18,12 +18,12 @@
           </ul>
         </div>         
         @endif
-            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
+            <form action="/books/{[$book->id]}/borrow" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
                 @csrf
                 <div class="formgroup row mb-3">
                     <label for="mail" class="col-sm-3 col-form-label">Email: </label>
                     <div class="col-sm-9">
-                      <input  type="email" class="form-control" id="mail" name="mail" placeholder="Type your email" >
+                      <input  type="email" class="form-control" id="email" name="email" placeholder="Type your email" >
                     </div>
                 </div>
                 <br>

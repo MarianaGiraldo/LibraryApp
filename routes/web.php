@@ -23,3 +23,6 @@ Route::resource('/users',UserController::Class );
 Route::get('/books/{id}/drop', [\App\Http\Controllers\BookController::Class , 'drop' ]);
 Route::get('/users/{id}/drop', [\App\Http\Controllers\UserController::Class , 'drop' ]);
 
+Route::get('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow_form' ]);
+Route::post('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow' ]);
+

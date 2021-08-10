@@ -41,7 +41,7 @@
           </div>
           <h5>Book status: {{$book->status}} </h5>
           @if ($book->status === 'Available')
-            <a href="" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
+            <a href="/books/{{$book->id}}}/borrow" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
           @else
             <a href="" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
           @endif
