@@ -34,4 +34,30 @@ class LendingController extends Controller
         $new_lend-> save();
         return redirect('/books/'.$book_id);
     }
+
+    public function return_form($book_id)
+    {
+        $book= Book::findOrFail($book_id);
+        return view('lendings.return', ['book'=>$book, 'fondo'=>'#f6ec9c']);
+    }
+
+    public function return(Request $request, $book_id)
+    {
+        $book= Book::findOrFail($book_id);
+        $user = DB::table('users')->where('email', $request->get('email'))->first();
+        $user = User::findOrFail($user->id);
+        $user->list_books_held = str_replace($book->title, "", $user->list_books_held);
+        $user->save();
+
+        $book->status = 'Available';
+        $book->save();
+
+        $new_lend = new Lending();
+        $new_lend ->user_id = $user->id;
+        $new_lend ->book_id = $book_id;
+        $new_lend ->type = "Return";
+        $new_lend-> save();
+        return redirect('/books/'.$book_id);
+    }
+
 }

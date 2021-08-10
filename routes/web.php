@@ -26,3 +26,6 @@ Route::get('/users/{id}/drop', [\App\Http\Controllers\UserController::Class , 'd
 Route::get('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow_form' ]);
 Route::post('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow' ]);
 
+Route::get('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return_form' ]);
+Route::post('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return' ]);
+
