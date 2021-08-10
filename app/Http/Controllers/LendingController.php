@@ -19,20 +19,27 @@ class LendingController extends Controller
     public function borrow(Request $request, $book_id)
     {
         $book= Book::findOrFail($book_id);
-        $user = DB::table('users')->where('email', $request->get('email'))->first();
-        $user = User::findOrFail($user->id);
-        $user->list_books_held = $user->list_books_held.' '.$book->title;
-        $user->save();
+        $errors= null;
+        if (DB::table('users')->where('email', $request->get('email'))->count() == 0) {
+            $errors=array();
+            array_push($errors, 'That email isn´t registered', 'Enter a registered email');
+            return view('lendings.borrow', ['book'=>$book, 'fondo'=>'#f6ec9c', 'errors'=>$errors]);
+        }else {
+            $user = DB::table('users')->where('email', $request->get('email'))->first();
+            $user = User::findOrFail($user->id);
+            $user->list_books_held = $user->list_books_held.' '.$book->title;
+            $user->save();
 
-        $book->status = 'Borrowed';
-        $book->save();
+            $book->status = 'Borrowed';
+            $book->save();
 
-        $new_lend = new Lending();
-        $new_lend ->user_id = $user->id;
-        $new_lend ->book_id = $book_id;
-        $new_lend ->type = "Borrow";
-        $new_lend-> save();
-        return redirect('/books/'.$book_id);
+            $new_lend = new Lending();
+            $new_lend ->user_id = $user->id;
+            $new_lend ->book_id = $book_id;
+            $new_lend ->type = "Borrow";
+            $new_lend-> save();
+            return redirect('/books/'.$book_id);
+        }
     }
 
     public function return_form($book_id)
@@ -57,7 +64,7 @@ class LendingController extends Controller
         $new_lend ->book_id = $book_id;
         $new_lend ->type = "Return";
         $new_lend-> save();
-        return redirect('/books/'.$book_id);
+        return redirect('/books/'.$book_id,['errors'=>$errors]);
     }
 
 }
