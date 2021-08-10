@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="row w-50 mx-auto"> <button type="submit" class="btn btn-primary col-12 mx-auto text-center">Borrow book</button></div>
+                <div class="row w-50 mx-auto"> <button type="submit" class="btn btn-primary col-12 mx-auto text-center">Return book</button></div>
                 <br>
             </form>
         </div>

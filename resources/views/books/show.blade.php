@@ -43,7 +43,7 @@
           @if ($book->status === 'Available')
             <a href="/books/{{$book->id}}}/borrow" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
           @else
-            <a href="" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
+            <a href="/books/{{$book->id}}}/return" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
           @endif
          
           <a href="" class="btn btn-primary m-3 col btn-lg" role="button">Email me the Book info</a>
