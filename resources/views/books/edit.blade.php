@@ -30,7 +30,7 @@
                 <div class="formgroup row mb-3">
                     <label for="autorEdit" class="col-sm-4 col-form-label">Autor: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="autorEdit" name="autorEdit" value="{{$book->autor}}>
+                      <input type="text" class="form-control" id="autorEdit" name="autorEdit" value="{{$book->autor}}">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
@@ -57,13 +57,13 @@
                 <div class="formgroup row mb-3">
                     <label for="p_yearEdit" class="col-sm-4 col-form-label">Publication Year: </label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="p_yearEdit" name="p_yearEdit" placeholder="YYYY">
+                      <input type="text" class="form-control" id="p_yearEdit" name="p_yearEdit" placeholder="YYYY"  value="{{$book->publication_year}}">
                     </div>
                 </div>
                 <div class="formgroup row mb-3">
                     <label for="book_cover" class="col-sm-4 col-form-label">Book Cover: </label>
                     <div class="col-sm-8">
-                      <input class="form-control" type="file" id="book_cover" name="book_cover">
+                      <input class="form-control" type="file" id="book_cover" name="book_cover"">
                     </div>
                 </div>
 

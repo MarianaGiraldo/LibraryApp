@@ -8,8 +8,8 @@
     </div>
     <div class="row">
         <div class="w-75 mx-auto rounded">
-          <div class="card m-auto">
-            <img src="images/books/{{$book->book_cover}}" alt="{{$book->title}} cover image" />
+          <div class="card show m-auto">
+            <img src="images/books/{{$book->book_cover}}" alt="{{$book->title}} cover image" class="card-img-top"/>
           </div>
           <div class="row my-3">
           <h4>Book: {{$book->title}} </h4>
