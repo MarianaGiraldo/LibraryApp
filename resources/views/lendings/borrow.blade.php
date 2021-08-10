@@ -24,6 +24,7 @@
                     <label for="mail" class="col-sm-3 col-form-label">Email: </label>
                     <div class="col-sm-9">
                       <input  type="email" class="form-control" id="email" name="email" placeholder="Type your email" >
+                      <p class="text-muted">You need to be registered</p>
                     </div>
                 </div>
                 <br>
