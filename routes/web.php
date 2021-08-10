@@ -15,6 +15,9 @@ use App\Models\Book;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function (){
+    return view('index');
+});
 Route::resource('/books',BookController::Class );
 Route::resource('/users',UserController::Class );
 
