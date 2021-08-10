@@ -37,7 +37,7 @@
                 <div class="row">
                 @foreach($books as $book)
                     <div class="card col-4 showBooks m-4" >
-                    <img src="images/books/{{$book->book_cover}}" alt="{{$book->title}} cover image" />
+                    <img src="images/books/{{$book->book_cover}}" alt="{{$book->title}} cover image" width="300" height="450"/>
                     <div class="card-body">
                             <h5 class="card-title">Book title: {{$book->title}} </h5>
                             <p class="card-text">Autor: {{$book->autor}} </p>
