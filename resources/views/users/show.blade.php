@@ -9,7 +9,6 @@
     <div class="row">
         <div class="w-75 mx-auto rounded">
           <div class="row my-3">
-          <h4>User: {{$user->firstName}} {{$user->lastName}}</h4>
             <div class="col-sm-4">
               <div class="card show">
                 <div class="card-body">
@@ -30,7 +29,10 @@
               <div class="card show">
                 <div class="card-body">
                   <h5 class="card-title">Password:</h5>
-                  <p class="card-text">{{$user->password}}</p>
+                    <details>
+                      <summary>Show password:</summary>
+                        <p class="card-text">{{$user->password}}</p>
+                    </details>
                 </div>
               </div>
             </div>
@@ -47,7 +49,7 @@
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
+            <th scope="col">Birth Date</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -58,7 +60,6 @@
             <td >{{$user->lastName}} </td>
             <td >{{$user->email}} </td>
             <td >{{$user->birthDate}} </td>
-            <td >{{$user->password}}</td>
             <td ><a class="btn btn-success btn-sm" role="button" href="/users/{{$user->id}}/edit" >Edit</a> </td>
             <td ><a class="btn btn-danger btn-sm" role="button" href="/users/{{$user->id}}/drop" >Delete</a> </td>
         </tr>
