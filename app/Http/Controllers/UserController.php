@@ -35,6 +35,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'email'=>'required',
+            'birthDate'=>'required',
+            'password'=>'required',
+        ]);
         $newUser = new user();
         $newUser ->firstName = $request->get('firstName');
         $newUser ->lastName = $request->get('lastName');
@@ -54,7 +61,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('users.show', ['user'=>User::findOrFail($id), 'users'=>User::all(), 'fondo'=>'#91a5f5']);
+        $userInfo=user::findOrFail($id);
+        return view('users.show', [
+            'user'=>User::findOrFail($id), 
+            'users'=>User::all(), 
+            'fondo'=>'#91a5f5']);
     }
 
     /**

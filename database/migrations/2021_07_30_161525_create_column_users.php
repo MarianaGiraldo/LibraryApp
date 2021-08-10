@@ -27,11 +27,7 @@ class CreateColumnUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            Schema::dropIfExists('nombre');
-            Schema::dropIfExists('apellido');
-            Schema::dropIfExists('correo');
-            Schema::dropIfExists('contraseña');
-            Schema::dropIfExists('estado');
+            //
         });
     }
 }
