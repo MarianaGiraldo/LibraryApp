@@ -18,7 +18,7 @@
           </ul>
         </div>         
         @endif
-            <form action="/books/{[$book->id]}/borrow" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
+            <form action="/books/{{$book->id}}/borrow" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
                 @csrf
                 <div class="formgroup row mb-3">
                     <label for="mail" class="col-sm-3 col-form-label">Email: </label>

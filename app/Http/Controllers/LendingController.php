@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lending;
 use App\Models\Book;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class LendingController extends Controller
 {
@@ -18,6 +20,7 @@ class LendingController extends Controller
     {
         $book= Book::findOrFail($book_id);
         $user = DB::table('users')->where('email', $request->get('email'))->first();
+        $user = User::findOrFail($user->id);
         $user->list_books_held = $user->list_books_held.' '.$book->title;
         $user->save();
 
@@ -29,6 +32,6 @@ class LendingController extends Controller
         $new_lend ->book_id = $book_id;
         $new_lend ->type = "Borrow";
         $new_lend-> save();
-        return redirect('/books'.$book_id);
+        return redirect('/books/'.$book_id);
     }
 }

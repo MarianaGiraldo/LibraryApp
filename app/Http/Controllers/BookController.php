@@ -39,8 +39,7 @@ class BookController extends Controller
             'title'=>'required',
             'autor'=>'required',
             'genre'=>'required',
-            'publication_year'=>'required',
-            'status'=>'required',
+            'p_year'=>'required',
             'book_cover'=>'required',
         ]);
         $nuevo = new book();
