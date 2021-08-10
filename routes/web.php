@@ -19,4 +19,7 @@ Route::resource('/books',BookController::Class );
 Route::resource('/users',UserController::Class );
 
 
+
 Route::get('/books/{id}/drop', [\App\Http\Controllers\BookController::Class , 'drop' ]);
+Route::get('/users/{id}/drop', [\App\Http\Controllers\UserController::Class , 'drop' ]);
+

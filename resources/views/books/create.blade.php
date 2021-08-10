@@ -18,7 +18,11 @@
           </ul>
         </div>         
         @endif
+<<<<<<< HEAD
             <form action="/books" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" enctype="multipart/form-data">
+=======
+            <form action="/books" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" enctype= multipart/form-data >
+>>>>>>> 614d6fa1515bf430b1881c568f639c70594a184d
                 @csrf
                 <div class="formgroup row mb-3">
                     <label for="title" class="col-sm-4 col-form-label">Book Title: </label>
