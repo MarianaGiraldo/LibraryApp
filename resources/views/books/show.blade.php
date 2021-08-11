@@ -59,6 +59,7 @@
             <th scope="col">Autor</th>
             <th scope="col">Genre</th>
             <th scope="col">Publication year</th>
+            <th scope="col">Status</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -69,6 +70,7 @@
             <td >{{$book->autor}} </td>
             <td >{{$book->genre}} </td>
             <td >{{$book->publication_year}} </td>
+            <td >{{$book->status}} </td>
             <td ><a class="btn btn-success btn-sm" role="button" href="/books/{{$book->id}}/edit" >Edit</a> </td>
             <td ><a class="btn btn-danger btn-sm" role="button" href="/books/{{$book->id}}/drop" >Delete</a> </td>
         </tr>

@@ -18,7 +18,7 @@
           </ul>
         </div>         
         @endif
-            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" >
+            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="formgroup row mb-3">
@@ -63,7 +63,7 @@
                 <div class="formgroup row mb-3">
                     <label for="book_cover" class="col-sm-4 col-form-label">Book Cover: </label>
                     <div class="col-sm-8">
-                      <input class="form-control" type="file" id="book_cover" name="book_cover"">
+                      <input class="form-control" type="file" id="book_cover" name="book_cover">
                     </div>
                 </div>
 

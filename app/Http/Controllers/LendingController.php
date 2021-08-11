@@ -64,7 +64,7 @@ class LendingController extends Controller
         $new_lend ->book_id = $book_id;
         $new_lend ->type = "Return";
         $new_lend-> save();
-        return redirect('/books/'.$book_id,['errors'=>$errors]);
+        return redirect('/books/'.$book_id,);
     }
 
 }
