@@ -8,11 +8,10 @@
     </div>
     <div class="row">
         <div class="col">
-        @if($errors->any())
+        @if($errors!=null)
         <div class="w-75 mx-auto" >
-          <div class="alert alert-danger  my-1" role="alert"> Error! No se ha guardado el registro </div>
           <ul class="list-group-flush" >
-            @foreach( $errors->all() as $error)
+            @foreach( $errors as $error)
               <li class="list-group-item list-group-item-danger">{{$error}} </li>
             @endforeach
           </ul>
