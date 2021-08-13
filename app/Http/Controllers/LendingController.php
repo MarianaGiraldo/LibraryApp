@@ -78,7 +78,7 @@ class LendingController extends Controller
         }        
     }
 
-    public function historial()
+    public function history()
     {
         $lendings = Lending::all();
         return view('lending.show', ['lendings'=>$lendings , 'fondo'=>'#91a5f5']);
