@@ -75,9 +75,14 @@ class LendingController extends Controller
         }else{
             array_push($errors,'This user didn´t borrowed this book', 'Enter the user email used to borrow this book');
             return view('lendings.return', ['book'=>$book, 'fondo'=>'#f6ec9c', 'errors'=>$errors]);
-        }
-
-        
+        }        
     }
+
+    public function historial()
+    {
+        $lendings = Lending::all();
+        return view('lending.show', ['lendings'=>$lendings , 'fondo'=>'#91a5f5']);
+    }
+
 
 }
