@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" >
-    <link rel="icon" type="image/png" href="{{public_path('images/favicon.png')}}">
+
+    <link rel="shortcut icon" href="public/favicon.ico">
 
 
     <title>The Golden Book</title>
