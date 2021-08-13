@@ -21,6 +21,7 @@
                 </div>
                 <a href="/books/create" class="btn btn-primary d-grid gap-2 col-6 mx-auto" role="button">Create a new Book</a>
                 <br>
+                <a href="/books/lendings/history" class="btn btn-primary d-grid gap-2 col-4 mx-auto" role="button">Lendings history</a>
             </div>
         </div>
 @endsection

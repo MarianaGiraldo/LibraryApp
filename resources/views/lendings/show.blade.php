@@ -10,15 +10,15 @@
             <th scope="col">Book title</th>
             <th scope="col">User name</th>
         </tr>
-        {{$i=0}}
+        <?php $i=0; ?>
     @foreach ($lendings as $lending)
         <tr class="table-light">
             <td class="table-warning" scope="row" >{{$lending->id}}</td>
             <td >{{$lending->type}} </td>
-            <td >{{$book[i]->title}} </td>
-            <td >{{$users[i]->firstName}} {{$users[i]->lastName}}</td>
+            <td >{{$books[$i]->title}} </td>
+            <td >{{$users[$i]->firstName}} {{$users[$i]->lastName}}</td>
         </tr>
-        {{$i++}}
+        <?php $i++; ?>
     @endforeach
     </table>
     

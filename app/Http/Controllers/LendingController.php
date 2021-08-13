@@ -87,10 +87,10 @@ class LendingController extends Controller
             $lending = $lendings[$i];
             $user = User::findOrFail($lending->user_id);
             $book = Book::findOrFail($lending->book_id);
-            array_push($user, $users);
-            array_push($book, $books);
+            array_push($users, $user);
+            array_push($books, $book);
         }
-        return view('lending.show', ['lendings'=>$lendings, 'books'=>$books, 'users'=>$users , 'fondo'=>'#91a5f5']);
+        return view('lendings.show', ['lendings'=>$lendings, 'books'=>$books, 'users'=>$users , 'fondo'=>'#91a5f5']);
     }
 
 
