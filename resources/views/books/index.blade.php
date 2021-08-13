@@ -1,36 +1,6 @@
 @extends('layouts.layout')
 <br><br>
 @section('content')
-<?php 
-    function displayImage($id){
-        $host     = 'localhost';
-        $username = 'root';
-        $password = '';
-        $db     = 'libraryappdb';
-        
-        //Create the connection and select the database
-        $db = new mysqli($host, $username, $password, $db);
-        
-        // Check the connection
-        if($db->connect_error){
-            die("Connexion error: " . $db->connect_error);
-        }
-        
-        //Get the image from the database
-        $res = $db->query("SELECT book_cover FROM books WHERE id = {$id}");
-        
-        if($res->num_rows > 0){
-            $img = $res->fetch_assoc();
-            
-            //Render the image
-            header("Content-type: image/jpg"); 
-            echo $img['book_cover']; 
-        }else{
-            echo 'Image not found...';
-        }
-    
-    }
-?> 
         <div class="row ">
             <div class="col">
                 <h2 class="m-3">Books</h2>
