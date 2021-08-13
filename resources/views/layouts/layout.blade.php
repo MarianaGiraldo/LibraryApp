@@ -24,10 +24,10 @@
       background-color: #add8e6;
     }
     .usersFormCreate{
-      background-color:#e6b8d2; 
+      background-color:#e6b8d2;
     }
     .formularioEditG{
-      background-color:#97d992 
+      background-color:#97d992
     }
     .formularioConfirm{
       background-color:#f3926f
