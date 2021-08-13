@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Lending;
 use App\Models\Book;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class LendingController extends Controller
@@ -22,11 +21,11 @@ class LendingController extends Controller
         $book= Book::findOrFail($book_id);
         $errors=array();
 
-        if (DB::table('users')->where('email', $request->get('email'))->count() == 0) {
+        if (User::('email', $request->get('email'))->count() == 0) {
             array_push($errors, 'That email isn´t registered', 'Enter a registered email');
             return view('lendings.borrow', ['book'=>$book, 'fondo'=>'#f6ec9c', 'errors'=>$errors]);
         }else {
-            $user = DB::table('users')->where('email', $request->get('email'))->first();
+            $user = User::where('email', $request->get('email'))->first();
             $user = User::findOrFail($user->id);
             $user->list_books_held = $user->list_books_held.' '.$book->title;
             $user->save();
@@ -52,9 +51,9 @@ class LendingController extends Controller
     public function return(Request $request, $book_id)
     {
         $book= Book::findOrFail($book_id);
-        $user = DB::table('users')->where('email', $request->get('email'))->first();
+        $user = User::where('email', $request->get('email'))->first();
         $errors=array();
-        if (DB::table('users')->where('email', $request->get('email'))->count() == 0) {
+        if (User::where('email', $request->get('email'))->count() == 0) {
             array_push($errors, 'That email isn´t registered', 'Enter a registered email');
             return view('lendings.return', ['book'=>$book, 'fondo'=>'#f6ec9c', 'errors'=>$errors]);
         }
@@ -95,7 +94,7 @@ class LendingController extends Controller
 
     public function historyByUser($id)
     {
-        $lendings = DB::table('lendings')->where('user_id', $id)->get();
+        $lendings = Lending::where('user_id', $id)->get();
         $user= User::findOrFail($id);
         $books= array();
         for ($i=0; $i < count($lendings); $i++) { 
