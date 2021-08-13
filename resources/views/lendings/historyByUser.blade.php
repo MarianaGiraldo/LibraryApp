@@ -16,7 +16,7 @@
             <td class="table-warning" scope="row" >{{$lending->id}}</td>
             <td >{{$lending->type}} </td>
             <td >{{$books[$i]->title}} </td>
-            <td >Date</td>
+            <td>{{date("d/m/Y",strtotime($lending->created_at))}} </td>
         </tr>
         <?php $i++; ?>
     @endforeach

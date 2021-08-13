@@ -9,6 +9,7 @@
             <th scope="col">Lending type</th>
             <th scope="col">Book title</th>
             <th scope="col">User name</th>
+            <th scope="col">Date</th>
         </tr>
         <?php $i=0; ?>
     @foreach ($lendings as $lending)
@@ -17,6 +18,7 @@
             <td >{{$lending->type}} </td>
             <td >{{$books[$i]->title}} </td>
             <td >{{$users[$i]->firstName}} {{$users[$i]->lastName}}</td>
+            <td>{{date("d/m/Y",strtotime($lending->created_at))}} </td>
         </tr>
         <?php $i++; ?>
     @endforeach
