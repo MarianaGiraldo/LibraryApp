@@ -7,6 +7,24 @@
         </div>
     </div>
 
+    <div class="row mt-5 p-4">
+      <table class="table table-hover table-bordered border-success w-75 mx-auto">
+        <tr class="table-primary table-active">
+            <th>ID</th>
+            <th scope="col">Book</th>            
+            <th scope="col">Status</th>
+        </tr>
+    @foreach ($books as $book)
+        <tr class="table-light">
+            <td class="table-warning" scope="row" >{{$book->id}}</td>
+            <td >{{$book->title}} </td>
+            <td >{{$book->status}} </td>
+        </tr>
+    @endforeach
+    </table>
+    
+    </div>
+
     
     <div class="row mt-5 p-4">
       <table class="table table-hover table-bordered border-success w-75 mx-auto">
