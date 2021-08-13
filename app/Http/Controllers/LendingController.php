@@ -21,7 +21,7 @@ class LendingController extends Controller
         $book= Book::findOrFail($book_id);
         $errors=array();
 
-        if (User::('email', $request->get('email'))->count() == 0) {
+        if (User::where('email', $request->get('email'))->count() == 0) {
             array_push($errors, 'That email isn´t registered', 'Enter a registered email');
             return view('lendings.borrow', ['book'=>$book, 'fondo'=>'#f6ec9c', 'errors'=>$errors]);
         }else {
