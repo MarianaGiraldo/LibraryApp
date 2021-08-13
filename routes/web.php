@@ -32,3 +32,4 @@ Route::post('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController:
 Route::get('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return_form' ]);
 Route::post('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return' ]);
 Route::get('/books/lendings/history', [\App\Http\Controllers\LendingController::Class , 'history' ]);
+Route::get('/users/{id}/lendings/history', [\App\Http\Controllers\LendingController::Class , 'historyByUser' ]);

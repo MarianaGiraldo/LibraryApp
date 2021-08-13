@@ -90,8 +90,20 @@ class LendingController extends Controller
             array_push($users, $user);
             array_push($books, $book);
         }
-        return view('lendings.show', ['lendings'=>$lendings, 'books'=>$books, 'users'=>$users , 'fondo'=>'#91a5f5']);
+        return view('lendings.history', ['lendings'=>$lendings, 'books'=>$books, 'users'=>$users , 'fondo'=>'#91a5f5']);
     }
 
+    public function historyByUser($id)
+    {
+        $lendings = DB::table('lendings')->where('user_id', $id);
+        $user= User::findOrFail($id);
+        $books= array();
+        for ($i=0; $i < count($lendings); $i++) { 
+            $lending = $lendings[$i];
+            $book = Book::findOrFail($lending->book_id);
+            array_push($books, $book);
+        }
+        return view('lendings.history', ['lendings'=>$lendings, 'books'=>$books, 'user'=>$user , 'fondo'=>'#91a5f5']);
+    }
 
 }
