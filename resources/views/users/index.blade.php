@@ -22,7 +22,7 @@
                             <td >{{$user->email}} </td>
                             <td >{{$user->birthDate}} </td>
                             <td><a href="users/{{$user->id}}" class="btn btn-primary">View User</a></td>
-                            <td><a href="lendings/{{$user->id}}/show" class="btn btn-primary">View History</a></td>
+                            <td><a href="lendings/{{$user->id}}" class="btn btn-primary">View History</a></td>
  
                         </tr>
                     @endforeach
