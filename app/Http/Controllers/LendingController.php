@@ -78,12 +78,10 @@ class LendingController extends Controller
         }        
     }
 
-    public function show($id)
+    public function historial()
     {
-        $lending=>Lending::findOrFail($id);
-        $book=>Book::findOrFail($lending->book_id);
-        $user=>User::findOrFail($lending->user_id);
-        return view('lending.show', ['lending'=>$lending ,'book'=>$book, 'user'=>$user, 'fondo'=>'#91a5f5']);
+        $lendings = Lending::all();
+        return view('lending.show', ['lendings'=>$lendings , 'fondo'=>'#91a5f5']);
     }
 
 
