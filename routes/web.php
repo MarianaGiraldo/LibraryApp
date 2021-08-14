@@ -16,7 +16,7 @@ use App\Models\Book;
 |
 */
 Route::get('/', function (){
-    return view('index');
+    return view('index', ['fondo'=>'#f6ec9c']);
 });
 Route::resource('/books',BookController::Class );
 Route::resource('/users',UserController::Class );

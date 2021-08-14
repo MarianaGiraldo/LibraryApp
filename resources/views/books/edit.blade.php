@@ -16,9 +16,9 @@
               <li class="list-group-item list-group-item-danger">{{$error}} </li>
             @endforeach
           </ul>
-        </div>         
+        </div>
         @endif
-            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto booksFormCreate p-4 rounded" enctype="multipart/form-data">
+            <form action="/books/{{$book->id}}" method="POST" class="w-75 mx-auto booksFormEdit p-4 rounded" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="formgroup row mb-3">
