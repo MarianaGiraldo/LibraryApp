@@ -48,7 +48,7 @@ class UserController extends Controller
         $newUser ->email = $request->get('email');
         $newUser ->birthDate = $request->get('birthDate');
         $newUser ->password = $request->get('password');
-        
+
         $newUser -> save();
         return redirect('/users');
     }
@@ -63,8 +63,8 @@ class UserController extends Controller
     {
         $userInfo=user::findOrFail($id);
         return view('users.show', [
-            'user'=>User::findOrFail($id), 
-            'users'=>User::all(), 
+            'user'=>User::findOrFail($id),
+            'users'=>User::all(),
             'fondo'=>'#91a5f5']);
     }
 
@@ -77,7 +77,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = user::findOrFail($id);
-        return view ('users.edit', ['user'=>$user, 'fondo'=>'#ccb8e6']);
+        return view ('users.edit', ['user'=>$user, 'fondo'=>'#b8d2e6']);
     }
 
     /**
@@ -108,13 +108,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $destroyUser=user::find($id);
-        $destroyUser->destroy();
+        User::destroy($id);
         return redirect('/users');
     }
     public function drop($id)
     {
         $dropUser=user::find($id);
-        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'#ccb8e6']);
+        return view('users.drop', ['dropUser'=>$dropUser, 'fondo'=>'#f3d46f']);
     }
 }

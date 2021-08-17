@@ -77,7 +77,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        return view('books.edit', ['book'=>$book, 'fondo'=>'#ccb8e6']);
+        return view('books.edit', ['book'=>$book, 'fondo'=>'#97d992']);
     }
 
     /**
@@ -111,15 +111,14 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $destroyBook = Book::find($id);
-        $destroyBook->delete();
+        Book::destroy($id);
         return redirect('/books');
     }
 
     public function drop($id)
     {
         $dropBook = Book::find($id);
-        return view('books.drop', ['dropBook'=>$dropBook, 'fondo'=>'#ccb8e6']);
+        return view('books.drop', ['dropBook'=>$dropBook, 'fondo'=>'#f3d46f']);
 
     }
 

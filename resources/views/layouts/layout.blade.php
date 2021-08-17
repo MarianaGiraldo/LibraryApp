@@ -15,7 +15,7 @@
     <title>The Golden Book</title>
     <style>
     .fondo{
-        background-color: #add8e6;
+        background-color:{{$fondo}};
       }
       .showBooks{
         background-color:#ccb8e6;
@@ -24,12 +24,12 @@
       background-color: #add8e6;
     }
     .usersFormCreate{
-      background-color:#e6b8d2; 
+      background-color:#e6b8d2;
     }
-    .formularioEditG{
-      background-color:#97d992 
+    .booksFormEdit{
+      background-color:#f2ea87
     }
-    .formularioConfirm{
+    .confirmDrop{
       background-color:#f3926f
     }
     .formularioConfirmG{
