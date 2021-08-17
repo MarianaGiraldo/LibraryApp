@@ -37,19 +37,19 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
           <h5>Book status: {{$book->status}} </h5>
           @if ($book->status === 'Available')
             <a href="/books/{{$book->id}}}/borrow" class="btn btn-success m-3 col btn-lg" role="button">Borrow book</a>
+            <a href="/books/{{$book->id}}/confirmMail" class="btn btn-primary m-3 col btn-lg" role="button">Email me the Book info</a>
           @else
             <a href="/books/{{$book->id}}}/return" class="btn btn-success m-3 col btn-lg" role="button">Return book</a>
           @endif
-         
-          <a href="" class="btn btn-primary m-3 col btn-lg" role="button">Email me the Book info</a>
-        </div>  
+
+          </div>
     </div>
-    
+
     <div class="row mt-5 p-4">
       <table class="table table-hover table-bordered border-success w-75 mx-auto">
       <h2 class="mx-auto text-center">All Books</h2>
@@ -76,8 +76,8 @@
         </tr>
     @endforeach
     </table>
-    
+
     </div>
-    <a href="/books" class="btn btn-warning m-3" role="button">Atrás</a>
+    <a href="/books" class="btn btn-warning m-3" role="button">Back</a>
 
 @endsection

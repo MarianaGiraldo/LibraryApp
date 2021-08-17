@@ -33,3 +33,6 @@ Route::get('/books/{book_id}/return', [\App\Http\Controllers\LendingController::
 Route::post('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return' ]);
 Route::get('/books/lendings/history', [\App\Http\Controllers\LendingController::Class , 'history' ]);
 Route::get('/users/{id}/lendings/history', [\App\Http\Controllers\LendingController::Class , 'historyByUser' ]);
+
+Route::get('/books/{book_id}/confirmMail', [\App\Http\Controllers\BookController::Class, 'confirmMail' ])->name('ConfirmMail');
+Route::post('/books/{book_id}/sendMail', [\App\Http\Controllers\BookController::Class, 'sendMail' ])->name('SendMail');

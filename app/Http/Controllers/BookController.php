@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookInfo;
 
 class BookController extends Controller
 {
@@ -120,6 +122,20 @@ class BookController extends Controller
         $dropBook = Book::find($id);
         return view('books.drop', ['dropBook'=>$dropBook, 'fondo'=>'#f3d46f']);
 
+    }
+
+    public function confirmMail($id) {
+        $book = Book::findOrFail($id);
+        return view('books.confirmMail', ['book'=>$book, 'fondo'=>'#f3d46f']);
+    }
+    public function sendMail(Request $request , $id){
+        $validData=$request ->validate([
+            'mail' => 'email:rfc,dns'
+        ]);
+
+        $book = book::findOrFail($id);
+        Mail::to($request->get('mail'))->send(new BookInfo($book));
+        return redirect('/books/'.$id);
     }
 
 }
