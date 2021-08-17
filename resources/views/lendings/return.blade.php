@@ -15,7 +15,7 @@
               <li class="list-group-item list-group-item-danger">{{$error}} </li>
             @endforeach
           </ul>
-        </div>         
+        </div>
         @endif
             <form action="/books/{{$book->id}}/return" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
                 @csrf
@@ -31,5 +31,5 @@
             </form>
         </div>
     </div>
-    <a href="/books/{{$book->id}}" class="btn btn-primary m-3" role="button">Atrás</a>
+    <a href="/books/{{$book->id}}" class="btn btn-primary m-3" role="button">Back</a>
 @endsection

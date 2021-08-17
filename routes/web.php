@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
-use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +17,21 @@ use App\Models\Book;
 Route::get('/', function (){
     return view('index', ['fondo'=>'#f6ec9c']);
 });
-Route::resource('/books',BookController::Class );
-Route::resource('/users',UserController::Class );
+Route::resource('/books',BookController::class );
+Route::resource('/users',UserController::class );
 
 
 
-Route::get('/books/{id}/drop', [\App\Http\Controllers\BookController::Class , 'drop' ]);
-Route::get('/users/{id}/drop', [\App\Http\Controllers\UserController::Class , 'drop' ]);
+Route::get('/books/{id}/drop', [\App\Http\Controllers\BookController::class , 'drop' ]);
+Route::get('/users/{id}/drop', [\App\Http\Controllers\UserController::class , 'drop' ]);
 
-Route::get('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow_form' ]);
-Route::post('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::Class , 'borrow' ]);
+Route::get('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::class , 'borrow_form' ]);
+Route::post('/books/{book_id}/borrow', [\App\Http\Controllers\LendingController::class , 'borrow' ]);
 
-Route::get('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return_form' ]);
-Route::post('/books/{book_id}/return', [\App\Http\Controllers\LendingController::Class , 'return' ]);
-Route::get('/books/lendings/history', [\App\Http\Controllers\LendingController::Class , 'history' ]);
-Route::get('/users/{id}/lendings/history', [\App\Http\Controllers\LendingController::Class , 'historyByUser' ]);
+Route::get('/books/{book_id}/return', [\App\Http\Controllers\LendingController::class , 'return_form' ]);
+Route::post('/books/{book_id}/return', [\App\Http\Controllers\LendingController::class , 'return' ]);
+Route::get('/books/lendings/history', [\App\Http\Controllers\LendingController::class , 'history' ]);
+Route::get('/users/{id}/lendings/history', [\App\Http\Controllers\LendingController::class , 'historyByUser' ]);
 
-Route::get('/books/{book_id}/confirmMail', [\App\Http\Controllers\BookController::Class, 'confirmMail' ])->name('ConfirmMail');
-Route::post('/books/{book_id}/sendMail', [\App\Http\Controllers\BookController::Class, 'sendMail' ])->name('SendMail');
+Route::get('/books/{book_id}/confirmMail', [\App\Http\Controllers\BookController::class, 'confirmMail' ])->name('ConfirmMail');
+Route::post('/books/{book_id}/sendMail', [\App\Http\Controllers\BookController::class, 'sendMail' ])->name('SendMail');
