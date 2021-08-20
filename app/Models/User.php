@@ -13,7 +13,7 @@ class User extends Authenticatable
     public function userLending(){
         return $this->hasMany(Lending::class);
     }
-    
+
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'birthDate'
     ];
 
     /**
