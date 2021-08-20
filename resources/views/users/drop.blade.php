@@ -3,7 +3,7 @@
 @section('content')
 <div class="row m-4 ">
         <div class="col">
-            <h1>¿Delete User {{$dropUser-> firstName}} {{$dropUser-> lastName}}?</h1> <br><br>
+            <h1>¿Delete User {{$dropUser-> name}}?</h1> <br><br>
         </div>
     <div class="row">
             <div class="col">

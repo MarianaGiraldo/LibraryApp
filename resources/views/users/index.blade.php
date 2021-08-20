@@ -7,8 +7,7 @@
             <table class="table table-hover table-bordered border-success">
                 <tr class="table-primary table-active">
                             <th>ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Birth Date</th>
                             <th scope="col">View</th>
@@ -17,8 +16,7 @@
                     @foreach($users as $user)
                         <tr class="table-light">
                             <td class="table-warning" scope="row" > {{$user->id}}</td>
-                            <td >{{$user->firstName}} </td>
-                            <td >{{$user->lastName}} </td>
+                            <td >{{$user->name}} </td>
                             <td >{{$user->email}} </td>
                             <td >{{$user->birthDate}} </td>
                             <td><a href="users/{{$user->id}}" class="btn btn-success">View User</a></td>
