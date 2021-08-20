@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'The Golden Book') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,6 +18,42 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        .fondo{
+            background-color:{{$fondo}};
+          }
+          .showBooks{
+            background-color:#ccb8e6;
+        }
+        .booksFormCreate{
+          background-color: #add8e6;
+        }
+        .usersFormCreate{
+          background-color:#e6b8d2;
+        }
+        .booksFormEdit{
+          background-color:#f2ea87
+        }
+        .confirmDrop{
+          background-color:#f3926f
+        }
+        .formularioConfirmG{
+          background-color:#f3d46f
+        }
+    
+        .show{
+          background-color:#f5e191
+        }
+        .titulo{
+            text-align: center;
+            margin: auto;
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            font-size: 60px;
+        }
+        </style>
 </head>
 <body>
     <div id="app">
@@ -78,8 +114,16 @@
     </nav>
 
         <main class="py-4">
-            @yield('content')
+            @yield('contentAuth')
         </main>
+        
+        <div class="container w-100 mx-5 my-3 p-2">
+            @yield('index_content')
+        </div>
+        <br>
+        <div class="container w-75 mx-auto my-3 fondo rounded p-1">
+            @yield('content')
+        </div>
     </div>
 </body>
 </html>
