@@ -9,6 +9,9 @@ use App\Mail\BookInfo;
 
 class BookController extends Controller
 {
+    public function _construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

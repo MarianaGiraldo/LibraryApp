@@ -10,6 +10,9 @@ use Illuminate\Support\Str;
 
 class LendingController extends Controller
 {
+    public function _construct(){
+        $this->middleware('auth');
+    }
     public function borrow_form($book_id)
     {
         $book= Book::findOrFail($book_id);

@@ -7,6 +7,9 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    public function _construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,15 +39,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
-            'firstName'=>'required',
-            'lastName'=>'required',
+            'name'=>'required',
             'email'=>'required',
             'birthDate'=>'required',
             'password'=>'required',
         ]);
         $newUser = new user();
-        $newUser ->firstName = $request->get('firstName');
-        $newUser ->lastName = $request->get('lastName');
+        $newUser ->name = $request->get('name');
         $newUser ->email = $request->get('email');
         $newUser ->birthDate = $request->get('birthDate');
         $newUser ->password = $request->get('password');
@@ -90,8 +91,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $userUpdt=User::find($id);
-        $userUpdt ->firstName = $request->get('firstName');
-        $userUpdt ->lastName = $request->get('lastName');
+        $userUpdt ->name = $request->get('name');
         $userUpdt ->email = $request->get('email');
         $userUpdt ->birthDate = $request->get('birthDate');
         $userUpdt ->password = $request->get('password');
