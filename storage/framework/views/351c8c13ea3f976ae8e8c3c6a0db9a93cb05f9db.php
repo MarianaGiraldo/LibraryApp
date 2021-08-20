@@ -7,8 +7,7 @@
             <table class="table table-hover table-bordered border-success">
                 <tr class="table-primary table-active">
                             <th>ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Birth Date</th>
                             <th scope="col">View</th>
@@ -17,8 +16,7 @@
                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="table-light">
                             <td class="table-warning" scope="row" > <?php echo e($user->id); ?></td>
-                            <td ><?php echo e($user->firstName); ?> </td>
-                            <td ><?php echo e($user->lastName); ?> </td>
+                            <td ><?php echo e($user->name); ?> </td>
                             <td ><?php echo e($user->email); ?> </td>
                             <td ><?php echo e($user->birthDate); ?> </td>
                             <td><a href="users/<?php echo e($user->id); ?>" class="btn btn-success">View User</a></td>
