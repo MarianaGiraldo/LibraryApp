@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 <br><br><br>
 <div style="background-image: url({{url('/images/library.jpg')}});">
