@@ -3,7 +3,7 @@
 @section('content')
     <div class="row m-4 ">
         <div class="col mx-auto text-center">
-            <h1>Information of user {{$user->firstName}} {{$user->lastName}}</h1>
+            <h1>Information of user {{$user->name}}</h1>
         </div>
     </div>
     <div class="row">
@@ -46,8 +46,7 @@
       <h2 class="mx-auto text-center">All Users</h2>
         <tr class="table-primary table-active">
             <th>ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Birth Date</th>
             <th scope="col">Edit</th>
@@ -56,8 +55,7 @@
     @foreach ($users as $user)
         <tr class="table-light">
             <td class="table-warning" scope="row" >{{$user->id}}</td>
-            <td >{{$user->firstName}} </td>
-            <td >{{$user->lastName}} </td>
+            <td >{{$user->name}} </td>
             <td >{{$user->email}} </td>
             <td >{{$user->birthDate}} </td>
             <td ><a class="btn btn-success btn-sm" role="button" href="/users/{{$user->id}}/edit" >Edit</a> </td>

@@ -3,7 +3,7 @@
 @section('content')
         <div class="row mt-5 p-4">
       <table class="table table-hover table-bordered border-success w-75 mx-auto">
-      <h2 class="mx-auto text-center">Lendings History of user {{$user->firstName}} {{$user->lastName}}</h2>
+      <h2 class="mx-auto text-center">Lendings History of user {{$user->name}}</h2>
         <tr class="table-primary table-active">
             <th>ID</th>
             <th scope="col">Lending type</th>

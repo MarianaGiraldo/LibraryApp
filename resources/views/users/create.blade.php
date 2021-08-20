@@ -23,15 +23,9 @@
                 <form action="/users" method="POST" class="w-75 mx-auto usersFormCreate p-4 rounded">
                 @csrf
                     <div class="formgroup row mb-3">
-                        <label for="firstName" class="col-sm-4 col-form-label">First Name: </label>
+                        <label for="name" class="col-sm-4 col-form-label">Name: </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Type your first name">
-                        </div>
-                    </div>
-                    <div class="formgroup row mb-3">
-                        <label for="lastName" class="col-sm-4 col-form-label">Last Name: </label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Type your Last name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Type your first name">
                         </div>
                     </div>
                     <div class="formgroup row mb-3">

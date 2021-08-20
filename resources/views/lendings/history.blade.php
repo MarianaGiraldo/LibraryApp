@@ -17,7 +17,7 @@
             <td class="table-warning" scope="row" >{{$lending->id}}</td>
             <td >{{$lending->type}} </td>
             <td >{{$books[$i]->title}} </td>
-            <td >{{$users[$i]->firstName}} {{$users[$i]->lastName}}</td>
+            <td >{{$users[$i]->name}}</td>
             <td>{{date("d/m/Y",strtotime($lending->created_at))}} </td>
         </tr>
         <?php $i++; ?>
