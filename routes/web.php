@@ -35,3 +35,7 @@ Route::get('/users/{id}/lendings/history', [\App\Http\Controllers\LendingControl
 
 Route::get('/books/{book_id}/confirmMail', [\App\Http\Controllers\BookController::class, 'confirmMail' ])->name('ConfirmMail');
 Route::post('/books/{book_id}/sendMail', [\App\Http\Controllers\BookController::class, 'sendMail' ])->name('SendMail');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
