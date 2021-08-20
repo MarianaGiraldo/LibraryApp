@@ -15,7 +15,7 @@
               <li class="list-group-item list-group-item-danger"><?php echo e($error); ?> </li>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </ul>
-        </div>         
+        </div>
         <?php endif; ?>
             <form action="/books/<?php echo e($book->id); ?>/borrow" method="POST" class="w-75 mx-auto formulario p-4 rounded" >
                 <?php echo csrf_field(); ?>
@@ -32,6 +32,7 @@
             </form>
         </div>
     </div>
-    <a href="/books/<?php echo e($book->id); ?>" class="btn btn-primary m-3" role="button">Atrás</a>
+    <a href="/books/<?php echo e($book->id); ?>" class="btn btn-primary m-3" role="button">Back</a>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Program Files\XAMPP\htdocs\LaravelProject\LibraryApp\resources\views/lendings/borrow.blade.php ENDPATH**/ ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Program Files\XAMPP\htdocs\LaravelProject\LibraryApp\resources\views/lendings/borrow.blade.php ENDPATH**/ ?>

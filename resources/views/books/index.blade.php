@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<br><br>
 @section('content')
         <div class="row ">
             <div class=" ml-5">

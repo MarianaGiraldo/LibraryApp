@@ -1,4 +1,3 @@
-<br><br>
 <?php $__env->startSection('content'); ?>
         <div class="row ">
             <div class=" ml-5">
