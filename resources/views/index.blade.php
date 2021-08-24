@@ -13,7 +13,7 @@
     <p class="">We are an open collaborative public library, designed to share the reading passion where everyone can get access.</p>
     <p>Our page is based on users and books, so if you are new in our page, feel free to register and see the available books we have for you.</p>
   </div>
-  <div class="col-1 mx-5"></div>
+  <div class="col-1 mx-3"></div>
   <div class="col-4 ml-4 text-end justify-content-end">
     <h2 class="mx-3 border-bottom-gray">Books</h2>
     <hr class="">
